@@ -1,0 +1,22 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": "ecommerce-api",
+            "dialect": "MySQL",
+            "name": "mysql",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        },
+        {
+            "askForPassword": false,
+            "database": "ecommerce-api",
+            "dialect": "MySQL",
+            "name": "mysql",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
