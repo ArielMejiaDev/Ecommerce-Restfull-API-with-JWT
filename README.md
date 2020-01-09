@@ -50,6 +50,63 @@ heroku config:set APP_KEY=
 ```
 * all env file settings can be added on Heroku app/settings section.
 
+To add a database is required a heroku plugin for data, it can be found 
+in this link: (Heroku data section)[https://data.heroku.com], you can select a free or pay plan, and heroku provides a aws database.
+then you need to match the database and the app, it can be handle in Heroku GUI, 
+and then add some environment variables to heroku app 
+
+```env
+APP_URL=herokuurl
+DB_CONNECTION=pgsql
+DB_HOST=herokugenerated
+DB_PORT=5432
+DB_DATABASE=herokudatabasenamegenerated
+DB_USERNAME=herokuusernamegenerated
+DB_PASSWORD=herokupasswordgenerated
+```
+All database keys are required to connect correctly with heroku database plugin, 
+but the APP_URL key is required because Passport endpoint "oauth/token" redirects to base url.
+
+finally we are going to change the composer.json file to reflect Heroku deployment needs
+
+```json
+    //in scripts object add
+    "post-install-cmd": [ 
+        "php artisan clear-compiled",
+        "chmod -R 777 storage", 
+        "php artisan passport:keys"
+    ]
+    //copy from require-dev object the faker version of your project to required object
+    "fzaninotto/faker": "^1.4"
+```
+
+update composer to get changes and add the changes to Heroku
+
+```php
+composer update
+```
+
+```bash
+git add .
+git commit -m "wip"
+git push heroku master
+```
+
+And add the passport keys to add the auth key with passport password key as Bearer value
+
+```php
+heroku run php artisan passport:install
+```
+
+Now copy the password access token that returns the endpoint "oauth/token" with this you can create an object as here:
+
+```json
+{
+    "auth" : "Bearer access_tokenValue"
+}
+```
+
+
 ## Built With 🛠️
 
 * [Laravel](https://github.com/laravel/laravel) - The web framework used
