@@ -81,18 +81,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Ecommerce Rest API + JWT
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="https://documenter.getpostman.com/view/6107203/SWLh4mVN?version=latest" target="_blank">API Docs</a>
+                    <a href="https://github.com/ArielMejiaDev/Ecommerce-Restfull-API-with-JWT" target="_blank">API Repo</a>
                 </div>
             </div>
         </div>
