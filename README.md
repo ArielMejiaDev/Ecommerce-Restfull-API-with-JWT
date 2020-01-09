@@ -1,4 +1,4 @@
-# 💬 Ecommerce Rest Api with JWT
+# 💻 Ecommerce Rest Api with JWT
 
 Rest API built with Laravel and Passport adding Json Web Token and endpoints for products and reviews of products.
 
